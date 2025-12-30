@@ -1,0 +1,226 @@
+  /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  body {
+      line-height: 1.6;
+      background-color: #b9d6da;
+
+  }
+
+ /* banner */
+
+.pic-ctn {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 400px;       /* altura del banner */
+  overflow: hidden;    /* evita que las imágenes salgan del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;           /* quitamos el margin-top */
+}
+
+/* CONTENEDOR DE 2 IMÁGENES + TEXTO AL CENTRO */
+.triple-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+    margin: 40px auto;
+    padding: 0 0;
+}
+
+.triple-item img {
+    width: 300px;
+    height: auto;
+    
+}
+
+.triple-text {
+    max-width: 600px;
+    text-align: center;
+}
+
+.triple-text h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 32px;
+    color: #000;
+    text-align: center;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.18);
+    letter-spacing: 1.5px;
+}
+
+
+.triple-text p {
+  font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+
+.pic-ctn > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 395%;          /* ajusta tamaño del banner */
+  max-width: 1350px;   /* limita tamaño máximo */
+  height: auto;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: display 13s infinite;
+}
+
+@keyframes display {
+  0% { opacity: 0; transform: translate(-50%, -50%) translateX(100%); }
+  10% { opacity: 1; transform: translate(-50%, -50%) translateX(0); }
+  30% { opacity: 1; transform: translate(-50%, -50%) translateX(0); }
+  40% { opacity: 0; transform: translate(-50%, -50%) translateX(-100%); }
+  100% { opacity: 0; transform: translate(-50%, -50%) translateX(-100%); }
+}
+
+/* Delay para cada imagen */
+.pic-ctn > img:nth-child(1) { animation-delay: 0s; }
+.pic-ctn > img:nth-child(2) { animation-delay: 4s; }
+.pic-ctn > img:nth-child(3) { animation-delay: 8s; }
+
+
+  /* Header */
+  header {
+      background-color: white;
+      padding: 10px 20px;
+      border-bottom: 2px solid #ddd;
+      position: relative;
+      z-index: 1000;
+  }
+
+  .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Permite que los elementos se ajusten cuando el espacio es pequeño */
+  }
+
+  .logo {
+      width: 70px;
+      height: auto;
+  }
+
+  nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+  }
+
+  nav ul li {
+      position: relative;
+  }
+
+  nav ul a {
+      text-decoration: none;
+      color: #333;
+      font-size: 20px;
+      font-family: 'Courier New', Courier, monospace;
+  }
+
+  nav ul li:hover .dropdown-menu {
+      display: block;
+  }
+
+  .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid black;
+      list-style: none;
+      z-index: 1000;
+  }
+
+  .dropdown-menu li {
+      padding: 5px 10px;
+      display: flex; /* Alinea texto y imagen en una fila */
+      justify-content: space-between; /* Separa el texto y la imagen */
+      align-items: center; /* Alinea verticalmente */
+
+  }
+
+  .dropdown-menu li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      flex: 1; /* El texto ocupa el espacio disponible */
+  }
+
+  .submenu-img {
+      width: 30px; /* Ajusta el tamaño de la imagen */
+      height: auto;
+      margin-left: 10px; /* Separación entre el texto y la imagen */
+  }
+
+  .search-container {
+      display: flex;
+      flex-direction: column; /* Los elementos estarán en una columna */
+      align-items: flex-start; /* Alinea los elementos al inicio */
+      gap: 0.5px; /* Espacio entre el input y el enlace */
+  }
+
+  .search-box {
+      display: flex; /* Coloca el cuadro de búsqueda y la imagen en línea */
+      align-items: center; /* Alinea los elementos verticalmente */
+      gap: 10px; /* Espacio entre el cuadro de búsqueda y la imagen */
+  }
+
+  .search-container input {
+      padding: 10px;
+      border: 2px solid black;
+      border-radius: 25px;
+  }
+
+  .search-container img {
+      width: 50px;
+      height: auto;
+      cursor: pointer;
+  }
+
+  .icon-header {
+    width: 32px;  /* Ajusta al tamaño de tu carrito */
+    height: 32px; /* Mantiene proporción cuadrada */
+    margin-left: 10px; /* Separación entre carrito y perfil */
+    cursor: pointer;
+    vertical-align: middle;
+}
+.icon-header:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+  .search-container a {
+      text-decoration: none;
+      color: black;
+      font-size: 17px;
+      font-family: 'Fredoka One', cursive;
+      padding: 5px;
+  }
+
+  .search-container a:hover {
+      text-decoration: underline; /* Subraya el texto al pasar el ratón */
+  }
+
+  .map-link {
+  font-family: 'Fredoka One', cursive;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  margin-left: 10px; /* alineación con el input */
+}
+
+.map-link:hover {
+  text-decoration: underline;
+}
