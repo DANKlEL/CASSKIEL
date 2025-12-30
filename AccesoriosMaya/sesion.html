@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAYA</title>
+  <link rel="stylesheet" href="Iniciosesion.css">
+</head>
+<body>
+    <section class="CajaSesion">
+        <h1>Iniciar Sesión</h1>
+        <form id="loginForm">
+            <div class="input-box">
+                <img src="usuario.png" class="icono">
+                <input type="text" id="username" placeholder="Email">
+            </div>
+
+            <div class="input-box">
+                <img src="passwordIcon.png" class="icono">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+
+            <p id="error-msg" style="color: red; font-weight: bold; display: none; margin-top: -10px; margin-bottom: 10px;">
+              El usuario o la contraseña están mal
+            </p>
+
+            <p class="olvide">¿Olvidaste tu contraseña?</p>
+
+            <button type="submit" class="Inicio">Iniciar Sesión</button>
+
+            <p class="registro">¿No tienes cuenta? <a href="Registro.html">Registrate</a></p>
+        </form>
+    </section>
+
+    <script>
+      const form = document.getElementById('loginForm');
+      const errorMsg = document.getElementById('error-msg');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value.trim().toLowerCase();
+        const password = document.getElementById('password').value;
+
+        if (username === 'cassandra' && password === '1234') {
+          localStorage.setItem('isUserLoggedIn', 'true');
+          window.location.href = 'inicio.html';
+        } else {
+          errorMsg.style.display = 'block';
+        }
+      });
+    </script>
+</body>
+</html>
