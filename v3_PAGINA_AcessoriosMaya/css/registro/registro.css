@@ -1,0 +1,92 @@
+/* Contenedor principal */
+.auth-container { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 75vh; 
+    padding: 40px 20px; 
+}
+
+.auth-box { 
+    background: white; 
+    padding: 40px; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center; 
+}
+
+.auth-box h2 { 
+    font-family: 'Fredoka One', cursive; 
+    color: #2c656d; 
+    margin-bottom: 5px; 
+}
+
+.auth-box p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.auth-box input { 
+    width: 100%; 
+    padding: 14px; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Estado de error en el input */
+.auth-box input.input-error {
+    border: 2px solid #d9534f;
+    background-color: #fff2f2;
+}
+
+.auth-box input:focus {
+    border-color: #2c656d;
+}
+
+/* Texto de error debajo de los campos */
+.error-text {
+    color: #d9534f;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    height: 18px; /* Evita que el botón brinque al aparecer el texto */
+}
+
+.btn-auth { 
+    width: 100%; 
+    padding: 14px; 
+    background: #2c656d; 
+    border: none; 
+    color: white; 
+    border-radius: 10px; 
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background 0.3s; 
+}
+
+.btn-auth:hover { 
+    background: #1e464b; 
+}
+
+.auth-footer { 
+    margin-top: 20px; 
+    font-size: 0.9em; 
+}
+
+.auth-footer a {
+    color: #2c656d;
+    text-decoration: none;
+    font-weight: bold;
+}

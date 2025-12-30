@@ -1,0 +1,363 @@
+/* =========================================
+   ESTILOS GENERALES DEL PERFIL
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.perfil-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    min-height: 650px;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Sidebar (Navegación Lateral) */
+.perfil-sidebar {
+    width: 30%;
+    background: #f8f9fa;
+    padding: 30px;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.avatar-perfil {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2c656d;
+}
+
+.user-info-header h2 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.perfil-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tab-btn i {
+    width: 20px;
+    font-size: 1.1rem;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background: #2c656d;
+    color: white;
+}
+
+.btn-logout {
+    margin-top: auto;
+    color: #d9534f;
+}
+
+.btn-logout:hover {
+    background: #fdeaea;
+    color: #d9534f;
+}
+
+/* Contenido Principal */
+.perfil-content {
+    width: 70%;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.tab-content {
+    display: none; /* JS se encarga de mostrar el primero */
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-content h3 {
+    margin-bottom: 5px;
+    color: #2c656d;
+}
+
+.subtitle-p {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   FORMULARIOS Y GRIDS
+   ========================================= */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: #666;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #2c656d;
+    outline: none;
+    box-shadow: 0 0 8px rgba(44, 101, 109, 0.15);
+}
+
+.input-blocked {
+    background: #f4f4f4 !important;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Password Wrapper con "Ojos" corregidos */
+.input-password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-pass {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #2c656d;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 5;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-pass:hover {
+    color: #1e4d53;
+}
+
+/* Botón Guardar */
+.btn-save {
+    background: #2c656d;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-save:hover {
+    background: #1e4d53;
+    box-shadow: 0 4px 12px rgba(44, 101, 109, 0.3);
+}
+
+/* =========================================
+   MAPA Y DIRECCIONES (Las 3 tarjetas)
+   ========================================= */
+.map-container-wrapper {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#map {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 12px;
+}
+
+.direcciones-guardadas-container {
+    margin-top: 35px;
+    border-top: 2px dashed #eee;
+    padding-top: 25px;
+}
+
+.direcciones-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-direccion {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #fff;
+}
+
+.card-direccion:hover {
+    border-color: #2c656d;
+    transform: translateX(5px);
+}
+
+.card-direccion.active {
+    border-color: #2c656d;
+    background: #f0f9fa;
+}
+
+.check-circle {
+    font-size: 1.3rem;
+    margin-right: 15px;
+    color: #ccc;
+}
+
+.card-direccion.active .check-circle {
+    color: #2c656d;
+}
+
+.info-dir { flex-grow: 1; }
+.info-dir p { margin: 0; font-size: 0.85rem; color: #666; }
+.info-dir p strong { color: #333; display: block; }
+
+.btn-delete-dir {
+    background: none;
+    border: none;
+    color: #d9534f;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 8px;
+}
+
+/* =========================================
+   INFORMACIÓN DE PAGO (TARJETA 3D)
+   ========================================= */
+.card-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 35px 0;
+}
+
+.credit-card {
+    width: 350px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.credit-card.flipped { transform: rotateY(180deg); }
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #2c656d 0%, #1e4045 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #1e4045 0%, #000 100%);
+    transform: rotateY(180deg);
+    padding: 0;
+}
+
+.card-chip {
+    width: 45px;
+    height: 35px;
+    background: linear-gradient(135deg, #e0ac1c 0%, #b8860b 100%);
+    border-radius: 5px;
+}
+
+.card-logo {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 2.2rem;
+}
+
+.card-number-display {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-bar { background: #222; height: 45px; width: 100%; margin-top: 25px; }
+.card-cvv-section { padding: 20px 25px; text-align: right; }
+.cvv-box {
+    background: white;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+@media (max-width: 768px) {
+    .perfil-container { flex-direction: column; margin: 10px; }
+    .perfil-sidebar, .perfil-content { width: 100%; }
+    .grid-form { grid-template-columns: 1fr; }
+    .credit-card { width: 100%; max-width: 320px; }
+}
