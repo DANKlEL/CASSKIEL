@@ -1,0 +1,104 @@
+/* --- 1. EFECTO WAVY (ONDULADO) PARA TÍTULOS CENTRALES --- */
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.content h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: default;
+  margin: 20px 0;
+}
+
+.content h1 span {
+  display: inline-block;
+  animation: wave 1.5s ease-in-out infinite;
+  color: #2c3e50;
+  font-weight: 800; /* Más grueso para que destaque */
+  font-size: 2.5rem; /* Título central más grande */
+}
+
+/* Retrasos para el efecto de ola */
+.content h1 span:nth-child(1) { animation-delay: 0.0s; }
+.content h1 span:nth-child(2) { animation-delay: 0.1s; }
+.content h1 span:nth-child(3) { animation-delay: 0.2s; }
+.content h1 span:nth-child(4) { animation-delay: 0.3s; }
+.content h1 span:nth-child(5) { animation-delay: 0.4s; }
+.content h1 span:nth-child(6) { animation-delay: 0.5s; }
+.content h1 span:nth-child(7) { animation-delay: 0.6s; }
+.content h1 span:nth-child(8) { animation-delay: 0.7s; }
+
+/* --- 2. ESCALA PRECISA DE IMÁGENES (PICTO) --- */
+.picto img {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transform: scale(1);
+}
+
+.picto img:hover {
+  transform: scale(1.18);
+  filter: brightness(1.1) drop-shadow(0px 12px 20px rgba(0,0,0,0.3)); 
+}
+
+/* --- 3. BALANCEO LIGERO DEL ESLOGAN --- */
+@keyframes balanceoLigero {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.triple-text h2:hover {
+  animation: balanceoLigero 1.2s ease-in-out infinite;
+  color: #2c656d;
+}
+
+/* --- 4. ANIMACIÓN SCHITT'S CREEK (MENÚ LATERAL) --- */
+@keyframes schittsCreek {
+  0% { opacity: 0; transform: translateY(15px); filter: blur(8px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+#left-zone label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  padding: 15px 0;
+  /* AJUSTES PARA POSICIÓN Y TAMAÑO */
+  padding-left: 80px; /* Empuja el texto hacia el centro como en tu imagen */
+  font-weight: 800;
+  font-size: 2.2rem; /* Letras mucho más grandes */
+  letter-spacing: -1px;
+}
+
+#left-zone label span {
+  display: inline-block;
+  opacity: 0;
+  animation: schittsCreek 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Reiniciar al pasar el mouse */
+#left-zone label:hover span {
+  animation: none;
+  animation: schittsCreek 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Delays para el menú lateral */
+#left-zone label span:nth-child(1) { animation-delay: 0.05s; }
+#left-zone label span:nth-child(2) { animation-delay: 0.12s; }
+#left-zone label span:nth-child(3) { animation-delay: 0.19s; }
+#left-zone label span:nth-child(4) { animation-delay: 0.26s; }
+#left-zone label span:nth-child(5) { animation-delay: 0.33s; }
+#left-zone label span:nth-child(6) { animation-delay: 0.40s; }
+#left-zone label span:nth-child(7) { animation-delay: 0.47s; }
+#left-zone label span:nth-child(8) { animation-delay: 0.54s; }
+
+/* --- 5. LIMPIEZA DE VIDEO Y FONDO --- */
+.video-wrapper { position: relative; background-color: #95b7bc; overflow: hidden; padding: 60px 0; }
+.video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: 1; }
+.video-bg:not([src]), .video-bg[src=""] { display: none !important; }
+.promo-video { position: relative; z-index: 2; display: block; margin: 0 auto; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.2); max-width: 75%; }
