@@ -1,0 +1,136 @@
+.banner-carousel {
+  width: 100%;
+}
+
+#scene {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+#left-zone {
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.item input {
+  display: none;
+}
+
+.item label {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 80px;
+  opacity: 0.5;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.4rem;   /* ← tamaño base */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.item input:checked + label {
+  opacity: 1;
+  font-weight: bold;
+}
+
+.content {
+  position: absolute;
+  left: 40%;
+  top: -400px;
+  width: 750px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: slideout 0.7s ease-out;
+}
+
+.item input:checked ~ .content {
+  animation: slidein 0.7s ease-out forwards;
+}
+
+
+.label_perros {
+  color: #6BBFB5;
+}
+.label_gatos {
+  color: #8ED1C6;
+}
+.label_ofertas {
+  color: #fff4c5;
+}
+.label_nuevos {
+  color: #5C6F73;
+}
+
+.item input:checked + label.label_perros {
+  border-right: 10px solid #6BBFB5;
+}
+.item input:checked + label.label_gatos {
+  border-right: 10px solid #8ED1C6;
+}
+.item input:checked + label.label_ofertas {
+  border-right: 10px solid #fff4c5;
+}
+.item input:checked + label.label_nuevos {
+  border-right: 10px solid #5C6F73;
+}
+
+@keyframes slidein {
+  from { top: -400px; opacity: 0; }
+  to { top: 0; opacity: 1; }
+}
+
+@keyframes slideout {
+  from { top: 0; opacity: 1; }
+  to { top: -400px; opacity: 0; }
+}
+
+.picto {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+  background-size: cover;
+}
+
+.content_perros .picto {
+  background-image: url("perros.png");
+}
+.content_gatos .picto {
+  background-image: url("gatos.png");
+}
+.content_ofertas .picto {
+  background-image: url("ofertas.png");
+}
+.content_nuevos .picto {
+  background-image: url("adopcion.png");
+}
+
+
+#middle-border {
+  width: 2px;
+  background: #eee;
+}
+
+.content p {
+  color: #444;
+  font-size: 1rem;
+  max-width: 60%;
+  text-align: center;
+}

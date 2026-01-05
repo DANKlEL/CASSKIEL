@@ -1,0 +1,1338 @@
+  /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  body {
+      line-height: 1.6;
+      background-color: #b9d6da;
+
+  }
+
+  /* Header */
+  header {
+      background-color: white;
+      padding: 10px 20px;
+      border-bottom: 2px solid #ddd;
+      position: relative;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Permite que los elementos se ajusten cuando el espacio es pequeño */
+  }
+
+  .logo {
+      width: 70px;
+      height: auto;
+  }
+
+  nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+  }
+
+nav ul li {
+  position: relative; /* CLAVE */
+}
+
+  nav ul li a {
+    position: relative;
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+
+  }
+
+/* Hover */
+nav ul li a:hover {
+  background-color: #e6f3f5;
+  color: #2c656d;
+}
+
+/* Línea animada abajo */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: #2c656d;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+  width: 60%;
+}
+
+/* MENÚ ACTIVO (ej. Mascotas) */
+nav ul li a.active {
+  background-color: #2c656d;
+  color: white;
+}
+
+nav ul li a.active::after {
+  width: 60%;
+  background-color: white;
+}
+  nav ul li:hover .dropdown-menu {
+      display: block;
+  }
+
+  .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 120%;
+      left: 0;
+      background-color: #fff;
+      border-radius: 18px;
+      padding: 6px 0;
+      min-width: 140px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      z-index: 2000;
+  }
+
+.dropdown-menu li {
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* distancia controlada entre texto e icono */
+}
+
+  .dropdown-menu li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 15x;
+      font-weight: 600;
+      padding: 5px 0;
+  }
+
+
+  .submenu-img {
+      width: 30px; /* Ajusta el tamaño de la imagen */
+      height: auto;
+  }
+
+  .search-container {
+      display: flex;
+      flex-direction: column; /* Los elementos estarán en una columna */
+      align-items: flex-start; /* Alinea los elementos al inicio */
+      gap: 0.5px; /* Espacio entre el input y el enlace */
+  }
+
+  .search-box {
+      display: flex; /* Coloca el cuadro de búsqueda y la imagen en línea */
+      align-items: center; /* Alinea los elementos verticalmente */
+      gap: 10px; /* Espacio entre el cuadro de búsqueda y la imagen */
+  }
+
+  .search-container input {
+      padding: 10px;
+      border: 2px solid black;
+      border-radius: 25px;
+  }
+
+  .search-container img {
+      width: 50px;
+      height: auto;
+      cursor: pointer;
+  }
+
+  .icon-header {
+    width: 32px;  /* Ajusta al tamaño de tu carrito */
+    height: 32px; /* Mantiene proporción cuadrada */
+    margin-left: 10px; /* Separación entre carrito y perfil */
+    cursor: pointer;
+    vertical-align: middle;
+}
+.icon-header:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+  .search-container a {
+      text-decoration: none;
+      color: black;
+      font-size: 17px;
+      font-family: 'Fredoka One', cursive;
+      padding: 5px;
+  }
+
+  .search-container a:hover {
+      text-decoration: underline; /* Subraya el texto al pasar el ratón */
+  }
+
+  .map-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  margin-left: 10px; /* alineación con el input */
+}
+
+.map-link:hover {
+  text-decoration: underline;
+}
+
+  /* Banner */
+  .banner img {
+      width: 100%;
+      height: auto;
+  }
+
+
+  /*main section*/
+  .main-sections {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px 10px;
+      background-color: #95b7bc;
+  }
+
+  .section {
+      display: flex; /* Cambiar a un diseño en línea */
+      align-items: center; /* Alinear verticalmente los elementos */
+      gap: 15px; /* Espacio entre imagen y título */
+      text-align: left; /* Asegurarse de que el texto esté alineado a la izquierda */
+  }
+
+  .section img {
+      width: 120px;
+      height: 100px;
+      border-radius: 10px;
+  }
+
+  .section a {
+      margin-top: 0; /* Quitar el margen superior */
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  /* ===== SECCIÓN TRIPLE BOX AL RAS ===== */
+
+.triple-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 60px 0;      /* solo arriba y abajo */
+}
+
+.triple-item {
+  flex: 1;
+}
+
+.triple-item:first-child {
+  display: flex;
+  justify-content: flex-start;   /* imagen izquierda al ras */
+}
+
+.triple-item:last-child {
+  display: flex;
+  justify-content: flex-end;     /* imagen derecha al ras */
+}
+
+.triple-item img {
+  width: 260px;                  /* ajusta a tu gusto */
+  max-width: 100%;
+  height: auto;
+}
+
+.triple-text {
+  flex: 2;
+  text-align: center;
+  padding: 0 40px;               /* aire para el texto */
+}
+
+.triple-text h2 {
+  font-size: 28px;
+  color: #2c656d;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.triple-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* --- CONTENEDOR DEL VIDEO --- */
+
+/* VIDEO A LA DERECHA – MÁS GRANDE */
+.video-wrapper {
+  flex: 1;                /* antes 1 → ahora ocupa más espacio */
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* --- VIDEO CON BORDE ATRACTIVO --- */
+.promo-video {
+    position: relative;
+    width: 80%;
+    z-index: 2;
+    border-radius: 25px;
+    padding: 6px; /* espacio para el borde */
+    background: linear-gradient(135deg, #ffac7a, #ffd86b, #ffc19e, #ffe8a3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+    /* animación */
+    animation: videoEntrance 3.0s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+}
+
+/* --- ANIMACIÓN DE ENTRADA --- */
+@keyframes videoEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.03);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== SECCIÓN VIDEO CON FONDO DE IMAGEN ===== */
+
+.video-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;          /* MENOS espacio entre texto y video */
+  padding: 30px 3% 60px;
+}
+
+
+/* TEXTO DEL LADO IZQUIERDO */
+.video-text {
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.community-image {
+  margin-top: 20px;       /* espacio entre texto e imagen */
+  width: 250px;           /* tamaño controlado */
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;    /* esquinas suaves */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.video-text h2 {
+  font-size: 32px;
+  color: #2c656d;
+  margin-bottom: 20px;
+}
+
+.video-text p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+}
+
+
+/* VIDEO LIMPIO, GRANDE Y SIN FONDO */
+.promo-video {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 25px;
+  background: transparent;
+  padding: 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .video-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .video-wrapper {
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+
+
+/* ===== ¿POR QUÉ ELEGIR ACCESORIOS MAYA? ===== */
+
+.why-maya {
+  padding: 60px 20px;
+  background-color: #b9d6da;
+  text-align: center;
+}
+
+.why-maya h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #2c656d;
+}
+
+.why-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background-color: white;
+  border-radius: 25px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.why-card img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.why-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #2c656d;
+}
+
+.why-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+  /*circle secion wrapper*/
+
+  .circle-section-wrapper {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 40px 0;
+
+      /* Agregar imágenes de fondo */
+      background-image: url('Pat1.png'), url('Pat1.png'), url('Pat1.png');
+      background-position: bottom left, bottom center, bottom right; /* Esquinas inferior izquierda y superior derecha */
+      background-repeat: no-repeat; /* Que no se repitan */
+      background-size: 300px 200px; /* Tamaño ajustado para que no sean invasivas */
+  }
+
+
+  /* Circle Section */
+  .circle-section {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      text-align: center;
+  }
+
+  .circle {
+      width: 250px; 
+      height: 250px; 
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  }
+
+  .circle:hover {
+      transform: translateY(-8px); /* Efecto hover */
+      box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+  }
+
+  .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .circle::before {
+      content: attr(data-label);
+      position: absolute;
+      top: -5px; /* Ajuste de posición de la etiqueta */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffde5a;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra de la etiqueta */
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+  }
+
+
+
+  /* Comentarios */
+  .comments {
+      padding: 40px 10px;
+      background-color: #b9d6da;
+      text-align: center;
+  }
+
+  .comments h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #2c656d;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  .comments-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 0 10px;
+  }
+
+  .comment-box {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 20px;
+      width: 250px; /* Tamaño del cuadro */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .comment-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .comment-box p {
+      color: #555;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 15px;
+  }
+
+  .comment-box span {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      color: #007BFF;
+  }
+
+/* ===== NUESTRA COMUNIDAD ===== */
+
+.community {
+  padding: 60px 20px;
+  background-color: #95b7bc;
+  text-align: center;
+}
+
+.community h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  color: #2c656d;
+  margin-bottom: 10px;
+}
+
+.community-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.community-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.community-card {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.community-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.community-card span {
+  display: block;
+  padding: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #2c656d;
+  background-color: #f7f7f7;
+}
+
+
+.community-image {
+  margin-top: 20px;
+  width: 80%;           /* se alarga horizontalmente */
+  max-width: 800px;     /* controla el ancho máximo */
+  height: auto;         /* NO crece verticalmente */
+  object-fit: cover;    /* mantiene proporción */
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  /* Footer */
+  footer {
+      background-color: #fff4c5;
+      color: black;
+      padding: 20px 10px;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  .footer-container {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+ .footer-contact h3{
+  font-family: 'Poppins', sans-serif;
+ }
+
+  .footer-contact p{
+  font-family: 'Poppins', sans-serif;
+ }
+
+   .footer-location p{
+  font-family: 'Poppins', sans-serif;
+ }
+  .footer-location h3{
+  font-family: 'Poppins', sans-serif;
+ }
+
+  .footer-container div {
+      margin: 10px;
+      flex: 1 1 200px;
+  }
+
+  .footer-logo img {
+      width: 300px;
+      height: auto;
+  }
+
+  .footer-links h3 {
+      font-family: 'Poppins', sans-serif;
+ }
+  .footer-links ul {
+      list-style: none;
+      font-family: 'Poppins', sans-serif;
+ }
+
+  .footer-links a {
+      font-family: 'Poppins', sans-serif;
+      color: black;
+  }
+
+  .footer-links a:hover {
+      text-decoration: underline;
+  }
+
+
+  .footer-social img {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transición suave para efectos */
+}
+
+.footer-social img:hover {
+    transform: scale(1.2); /* Efecto de zoom suave al pasar el ratón */
+    filter: brightness(1.2); /* Aumenta el brillo cuando el usuario pasa el ratón */
+}
+
+.footer-social h3{
+      font-family: 'Poppins', sans-serif;
+}
+.footer-social a {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333; /* Color base del enlace */
+    transition: color 0.3s ease; /* Transición suave para cambios de color */
+}
+
+.footer-social a:hover {
+    font-family: 'Poppins', sans-serif;
+    color: #007bff; /* Cambia el color del texto al pasar el ratón */
+}
+
+.footer-social .social-item {
+    margin-bottom: 5px; /* Espacio entre iconos */
+    display: flex;
+    align-items: center;
+}
+
+.footer-social .social-item img {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+  .imagen1{
+      align-self: center;
+      width: 100px;
+      height: 100px;
+  }
+
+  .carrito img{
+      width: 50px;
+      margin-left: auto; 
+
+  }
+
+  .imagen2{
+      height: 350px;
+      width: 350px;
+      margin-bottom: 50px;
+      margin-left: -100px;
+  }
+
+  /* Ícono del chatbot */
+  .chat-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2d3341;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .chat-icon:hover {
+      background-color: #1f2631;
+      transform: scale(1.1);
+    }
+    
+    /* Contenedor principal del chatbot */
+    .chat-container {
+      position: fixed;
+      bottom: 20px; 
+      right: 20px;
+      width: 350px;
+      max-width: 90%;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: none;  
+      flex-direction: column;
+      z-index: 999;
+      height: 545px; 
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Encabezado del chatbot */
+    .chat-header {
+      background-color: #2d3341;
+      color: white;
+      text-align: center;
+      padding: 5px 10px; 
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px; 
+      opacity: 0; 
+      animation: fadeInHeader 0.5s forwards; 
+    }
+    
+    @keyframes fadeInHeader {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px); 
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .close-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out; 
+    }
+    
+    .close-button:hover {
+      transform: rotate(180deg); 
+    }
+    
+    .thin-text {
+      font-weight: lighter; 
+      padding: 3px 10px; 
+      background-color: #2d3341; 
+      color: white;
+      font-size: 16px; 
+      opacity: 0; 
+      animation: fadeInText 0.5s 0.3s forwards; 
+    }
+    
+    @keyframes fadeInText {
+      0% {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .input-container {
+      display: flex;
+      border-top: 1px solid #ddd;
+      padding: 10px;
+      background: #2d3341;
+    }
+    
+    .input-container input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    .input-container button {
+      background-color: #2d3341;
+      color: white;
+      border: 2px solid #1f2631;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .input-container button:hover {
+      background-color: #1f2631;
+      transform: scale(1.05);
+    }
+    
+    
+    .avatar-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      background-color: #f9f9f9;
+    }
+    
+    #avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2d3341;
+    }
+    
+    #avatar:hover {
+      transform: rotate(360deg);
+    }
+    
+    
+    .chatbox {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .chatbox .message {
+      margin: 5px 0;
+      padding: 10px 15px;
+      border-radius: 10px;
+      max-width: 80%;
+      font-size: 14px;
+      line-height: 1.4;
+      text-align: justify;  
+    }
+    
+    .chatbox .user {
+      background-color: #e1e1e1;
+      align-self: flex-end;
+    }
+    
+    .chatbox .ai {
+      background-color: #2d3341;
+      color: white;
+      align-self: flex-start;
+    }
+    
+    .input-container {
+      display: flex;
+      border-top: 1px solid #ddd;
+      padding: 10px;
+      background: #f9f9f9;
+    }
+    
+    .input-container input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    
+    .input-container button {
+      background-color: #2d3341;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+    
+    .input-container button:hover {
+      background-color: #1f2631;
+      transform: scale(1.05);
+    }
+    
+    
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      padding: 0 15px;
+    }
+    
+    .option-button {
+      background-color: white;
+      color: #2d3341;
+      border: 2px solid #2d3341;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    
+    .option-button:hover {
+      background-color: #2d3341;
+      color: white;
+    }
+    
+    
+    .promotion-message {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .promotion-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      color: #22bf96;
+      margin-bottom: 10px;
+    }
+    
+    .promotion-code {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ff6b6b;
+      background-color: #f2f2f2;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    
+    .promotion-footer {
+      font-size: 14px;
+      color: #333;
+      font-weight: bold;
+    }
+    
+    
+    .faq-button {
+      background-color: white;
+      color: #2d3341;
+      border: 2px solid #2d3341;
+      padding: 10px 15px;
+      margin: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-button:hover {
+      background-color: #2d3341;
+      color: white;
+    }
+    
+    
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .product {
+      background-color: white;
+      border: 2px solid #2d3341;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    
+    .product:hover {
+      background-color: #2d3341;
+      color: white;
+      border: 2px solid #2d3341;
+    }
+    
+    .product-image {
+      width: 30%;
+      height: auto;
+      margin: 0 auto 15px auto;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .product-image:hover {
+      transform: scale(1.05);
+    }
+    
+    .product p {
+      font-size: 15px;
+      color: #2d3341;
+      margin: 12px 0;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .product:hover p {
+      color: white;
+    }
+    
+    button {
+      margin: 10px 0 5px 0;
+      padding: 10px 20px;
+      background-color: white;
+      color: #2d3341;
+      border: 2px solid #2d3341;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    
+    button:hover {
+      background-color: #2d3341;
+      color: white;
+    }
+    
+
+.discount-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ffde5a;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 150px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.discount-badge p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.banner-image {
+  width: 200px;
+  height: auto;
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+/* Cursor personalizado en toda la página */
+body {
+  cursor: url('cursor.png'), auto;
+}
+
+/* Animación del menú */
+@keyframes slideIn {
+  0% {
+      transform: translateY(-100%); /* Fuera de la pantalla hacia arriba */
+      opacity: 0; /* Invisible */
+  }
+  100% {
+      transform: translateY(0); /* Posición normal */
+      opacity: 1; /* Totalmente visible */
+  }
+}
+
+header {
+  animation: slideIn 1s ease-out; /* Aplica la animación al header */
+  background-color: white; /* Color inicial del menú */
+  transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Cambios suaves */
+}
+
+header.scrolled {
+  background-color: #f7f7f7; /* Color diferente al desplazarse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
+}
+
+/* ===== LIMPIEZA TOTAL DEL CONTENEDOR DEL VIDEO ===== */
+
+.video-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  background: transparent !important; /* elimina el cuadro */
+  padding: 0;
+}
+
+/* VIDEO LIMPIO, SIN CAJA DETRÁS */
+.promo-video {
+  width: 100%;
+  max-width: 1150px;
+  border-radius: 28px;
+  background: transparent;
+  padding: 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Reduce espacio debajo del slogan */
+.slogan-section {
+  padding-bottom: 25px; /* antes era mucho más */
+}
+
+.promo-video {
+  width: 100%;
+  max-width: 1150px;
+  border-radius: 28px;
+  background: transparent;
+  padding: 6px;
+
+  /* borde con efecto */
+  border: 3px solid #2c656d;
+  outline: 3px solid rgba(44, 101, 109, 0.3);
+  outline-offset: -6px;
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== COMENTARIOS E-COMMERCE ===== */
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.comment-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ffde5a;
+  flex-shrink: 0;
+}
+
+.comment-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comment-info {
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.comment-info strong {
+  display: block;
+  font-size: 15px;
+  color: #2c656d;
+}
+
+.stars {
+  color: #ffb703;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* ===== CARRUSEL CON IMÁGENES LATERALES ===== */
+
+.with-side-images {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Contenedor de imágenes */
+.side-image {
+  flex: 0 0 160px;      /* ancho fijo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-image img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .with-side-images {
+    flex-direction: column;
+  }
+
+  .side-image {
+    order: 2;
+    margin: 20px 0;
+  }
+
+  .carousel {
+    order: 1;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.featured-section {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.featured-section p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #444;
+  max-width: 700px;
+  margin: 10px auto 0;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  color: #2c656d;
+}

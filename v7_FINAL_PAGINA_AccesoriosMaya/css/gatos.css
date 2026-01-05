@@ -1,0 +1,269 @@
+/* =========================================
+   1. RESET & BASE (Estilo Cartoon)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', 'Poppins', Arial, sans-serif; /* Fuentes más redondeadas */
+}
+
+body {
+    line-height: 1.6;
+    background-color: #fff4c5;
+    cursor: url('cursorgato.png'), auto;
+}
+
+/* =========================================
+   2. HEADER & NAVEGACIÓN
+   ========================================= */
+header {
+    animation: slideIn 1s ease-out;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ddd;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+header.scrolled {
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #e6f3f5;
+    color: #2c656d;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #2c656d;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 60%;
+}
+
+nav ul li a.active {
+    background-color: #2c656d;
+    color: white;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 18px;
+    padding: 6px 0;
+    min-width: 140px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2000;
+}
+
+nav ul li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dropdown-menu li a {
+    font-size: 15px;
+}
+
+/* =========================================
+   3. SECCIÓN DE FILTROS (DISEÑO CARTOON)
+   ========================================= */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background-color: white;
+    gap: 30px;
+}
+
+.filters {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff9e6; /* Fondo amarillito crema */
+    padding: 25px;
+    border: 4px solid #2c656d; /* Borde grueso estilo dibujo */
+    border-radius: 30px;
+    box-shadow: 10px 10px 0px #2c656d; /* Sombra sólida bloqueada */
+    height: fit-content;
+}
+
+.filter-group h4 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #2c656d;
+    text-transform: uppercase;
+    border-bottom: 3px dashed #2c656d;
+    padding-bottom: 5px;
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #444;
+    transition: transform 0.2s;
+}
+
+.filter-group label:hover {
+    transform: translateX(8px);
+    color: #f18d7c;
+}
+
+.filter-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    accent-color: #2c656d;
+    cursor: pointer;
+}
+
+/* =========================================
+   4. GRILLA DE PRODUCTOS
+   ========================================= */
+.filter-images {
+    flex: 4;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+/* Las tarjetas usan el estilo de producto.css, pero aquí ajustamos espaciado */
+.product-card {
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+/* =========================================
+   5. BANNER Y SECCIONES PRINCIPALES
+   ========================================= */
+.main-sections {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10px;
+    background-color: #95b7bc;
+}
+
+.section img {
+    width: 120px;
+    height: 100px;
+    border-radius: 10px;
+    animation: moveAndZoom 5s ease-in-out infinite;
+}
+
+/* =========================================
+   6. FOOTER Y EXTRAS
+   ========================================= */
+footer {
+    background-color: #fff4c5;
+    color: black;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-social img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+/* =========================================
+   7. ANIMACIONES
+   ========================================= */
+@keyframes moveAndZoom {
+    0%, 100% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1.2) translateY(-10px); }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* =========================================
+   8. BUSCADOR (Header)
+   ========================================= */
+.search-container input {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+.search-box-container input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 15px;
+    border: 3px solid #2c656d;
+    box-shadow: 4px 4px 0px #2c656d;
+}
