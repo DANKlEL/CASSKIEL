@@ -1,0 +1,49 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.checkout-tabs-container { font-family: 'Poppins', sans-serif; color: #333; }
+.checkout-tabs { display: flex; justify-content: space-around; margin-bottom: 12px; border-bottom: 1px solid #eee; }
+
+.tab-btn-check { flex: 1; padding: 8px; border: none; background: none; font-weight: 600; color: #ccc; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+.tab-btn-check.active { color: #2c656d; border-bottom: 2px solid #2c656d; }
+
+.step-dot { width: 20px; height: 20px; border: 2px solid #ccc; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 11px; }
+.step-dot.completed { background: #28a745; border-color: #28a745; color: white; }
+
+/* --- LISTADO DE TARJETAS (MÁS ALTO PARA EVITAR SCROLL) --- */
+.lista-items-check { 
+    max-height: 180px; /* Aumentado ligeramente */
+    overflow-y: auto; 
+    margin-bottom: 10px; 
+    padding-right: 5px; 
+}
+.item-selection { display: flex; align-items: center; padding: 8px 15px; border: 1px solid #eee; border-radius: 15px; margin-bottom: 6px; cursor: pointer; transition: 0.2s; position: relative; }
+.item-selection.selected { border: 2px solid #2c656d; background: #f0f7f8; }
+.item-selection .info strong { font-size: 0.8rem; color: #2c656d; display: block; }
+.item-selection .info span { font-size: 0.7rem; color: #666; }
+
+/* --- DISEÑO HORIZONTAL MEJORADO --- */
+.flex-pago { display: flex; gap: 15px; align-items: center; margin-top: 10px; }
+.col-card { flex: 0.9; }
+.col-inputs { flex: 1.1; text-align: left; }
+
+.form-dinamico-check { padding: 12px; background: #fff; border: 1px solid #eee; border-radius: 20px; transition: 0.3s; }
+.form-dinamico-check.selected { border: 2px solid #28a745; background: #f4fff6; }
+
+/* Inputs Redondeados y Compactos */
+.custom-input { width: 100%; padding: 7px 15px; margin: 3px 0; border: 1px solid #ddd; border-radius: 20px; box-sizing: border-box; font-size: 0.8rem; outline: none; }
+.custom-input:focus { border-color: #2c656d; }
+
+/* Tarjeta Mini Estilizada */
+.credit-card { width: 100%; max-width: 220px; height: 130px; perspective: 1000px; margin: 0 auto; color: white; position: relative; transition: 0.6s; transform-style: preserve-3d; }
+.card-front, .card-back { width: 100%; height: 100%; background: linear-gradient(135deg, #2c656d, #4a9ea8); border-radius: 12px; position: absolute; backface-visibility: hidden; padding: 12px; box-sizing: border-box; }
+.card-number-display { font-family: 'Courier New', monospace; font-size: 0.85rem; margin: 15px 0 8px 0; letter-spacing: 1px; }
+.card-chip { width: 28px; height: 20px; background: #ffd700; border-radius: 4px; }
+
+/* Mensaje Límite */
+.limit-msg-info { background: #fff4e5; color: #663c00; padding: 6px 12px; border-radius: 12px; font-size: 0.7rem; margin-bottom: 8px; border-left: 3px solid #2c656d; }
+
+/* Botones */
+.btn-use-this { background: #2c656d; color: white; border: none; padding: 8px; border-radius: 20px; width: 100%; margin-top: 8px; font-weight: bold; cursor: pointer; font-size: 0.8rem; }
+.btn-delete-card-modal { position: absolute; right: 12px; color: #ff4d4d; background: none; border: none; cursor: pointer; font-size: 0.9rem; }
+
+/* SweetAlert Pop-up */
+.swal2-popup { border-radius: 25px !important; width: 650px !important; padding: 1.5rem !important; }
